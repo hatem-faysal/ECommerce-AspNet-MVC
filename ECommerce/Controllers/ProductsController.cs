@@ -14,10 +14,10 @@ namespace ECommerce.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            var Response =await _context.Products.ToListAsync();
-            return View(Response);
+            var Response = await _context.Products.ToListAsync();
+            return View(Response); // This should match the view name
         }
     }
 }
