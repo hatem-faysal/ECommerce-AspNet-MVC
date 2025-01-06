@@ -11,8 +11,8 @@ namespace ECommerce.Data
                 var context = applicationservices.ServiceProvider.GetService<EcommerceDbContext>();
                 context.Database.EnsureCreated();
                 //CAtegory
-                if (!context.Categories.Any())
-                {
+                //if (!context.Categories.Any())
+                //{
                     var caategoreies = new List<Category>()
                     {
                         new Category()
@@ -22,22 +22,17 @@ namespace ECommerce.Data
                         },
                         new Category()
                         {
-                            Name="c2",
-                            Description="c2"
-                        },
-                        new Category()
-                        {
-                            Name="c3",
-                            Description="c3"
+                            Name="c4",
+                            Description="c5"
                         },
                     };
                     context.Categories.AddRange(caategoreies);
                     context.SaveChanges();
-                }
+                //}
 
                 //Product
-                if (!context.Products.Any())
-                {
+                //if (!context.Products.Any())
+                //{
                     var product = new List<Product>()
                     {
                         new Product()
@@ -69,10 +64,11 @@ namespace ECommerce.Data
                             ProductColor=ProductColor.Blue,
                             CategoryId=3
                         },
+
                     };
                     context.Products.AddRange(product);
                     context.SaveChanges();
-                }
+                //}
             }
         }
     }
