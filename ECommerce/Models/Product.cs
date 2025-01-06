@@ -16,7 +16,7 @@ namespace ECommerce.Models
 
         //Navigational Propery
         public int CategoryId { get; set; }
-        [ForeignKey(nameof(Category))]
+        [ForeignKey(nameof(CategoryId))]
         public Category Category { get; set; }
 
     }
