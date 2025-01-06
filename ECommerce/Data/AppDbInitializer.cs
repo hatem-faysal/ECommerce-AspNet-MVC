@@ -6,60 +6,73 @@ namespace ECommerce.Data
     {
         public static void Seed(IApplicationBuilder builder)
         {
-            using(var applicationservices = builder.ApplicationServices.CreateScope())
+            using (var applicationservices = builder.ApplicationServices.CreateScope())
             {
-
                 var context = applicationservices.ServiceProvider.GetService<EcommerceDbContext>();
                 context.Database.EnsureCreated();
-                //Category
+                //CAtegory
                 if (!context.Categories.Any())
                 {
-                    var categories = new List<Category>()
+                    var caategoreies = new List<Category>()
                     {
                         new Category()
                         {
-                            Name = "C1",
-                            Description = "C1"
+                            Name="c1",
+                            Description="c2"
                         },
                         new Category()
                         {
-                            Name = "C2",
-                            Description = "C2"
+                            Name="c2",
+                            Description="c2"
                         },
                         new Category()
                         {
-                            Name = "C3",
-                            Description = "C3"
+                            Name="c3",
+                            Description="c3"
                         },
                     };
-                    context.Categories.AddRange(categories);
+                    context.Categories.AddRange(caategoreies);
                     context.SaveChanges();
                 }
+
                 //Product
                 if (!context.Products.Any())
                 {
-                    var Prodcuts = new List<Product>()
+                    var product = new List<Product>()
                     {
                         new Product()
                         {
-                            Name = "P1", Description = "D1" , Price=150,ImageURL="https...",
-                            ProductColor = ProductColor.Red,CategoryId=1
+                            Name="p1",
+                            Description="d1",
+                            Price=120,
+                            ImageURL="www",
+                            ProductColor=ProductColor.Red,
+                            CategoryId=1
+
                         },
                         new Product()
                         {
-                            Name = "P2", Description = "D2" , Price=200,ImageURL="https...",
-                            ProductColor = ProductColor.Red,CategoryId=2
+                           Name="p2",
+                            Description="d2",
+                            Price=170,
+                            ImageURL="",
+                            ProductColor=ProductColor.Green,
+                            CategoryId=2
+
                         },
                         new Product()
                         {
-                            Name = "P3", Description = "D3" , Price=300,ImageURL="https...",
-                            ProductColor = ProductColor.Red,CategoryId=3
+                            Name="p3",
+                            Description="d3",
+                            Price=300,
+                            ImageURL="",
+                            ProductColor=ProductColor.Blue,
+                            CategoryId=3
                         },
                     };
-                    context.Products.AddRange(Prodcuts);
+                    context.Products.AddRange(product);
                     context.SaveChanges();
                 }
-
             }
         }
     }
