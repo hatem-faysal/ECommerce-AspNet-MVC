@@ -41,7 +41,7 @@ namespace ECommerce.Controllers
             {
                 return View(category);
             }
-            return View();
+            return View("NotFound");
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -51,7 +51,7 @@ namespace ECommerce.Controllers
             {
                 return View(category);
             }
-            return View();
+            return View("NotFound");
         }
         [HttpPost]
         public async Task<IActionResult> Edit(Category category)
@@ -62,6 +62,12 @@ namespace ECommerce.Controllers
                 return View("NotFound");
             }
             await _services.UpdateAsync(category);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _services.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
