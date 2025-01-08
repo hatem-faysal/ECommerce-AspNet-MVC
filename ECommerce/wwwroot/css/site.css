@@ -1,18 +1,100 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial;
+}
+
+.price {
+    color: gray;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+/* Base styles for the form */
+.form-group {
+    margin-bottom: 2rem; /* Space between form groups */
+}
+
+    /* Label styles */
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Input, Select, and Textarea styles */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+        margin-bottom: 1rem; /* Increased space between controls */
+    }
+
+    /* Textarea specific styles */
+    .form-group textarea {
+        resize: vertical; /* Allows vertical resizing */
+    }
+
+    /* Input specific styles */
+    .form-group input {
+        width: 100%; /* Full width */
+    }
+
+        /* Focus styles */
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #007bff; /* Bootstrap primary color */
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    /* Error message styles */
+    .form-group .error {
+        color: red;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+
+    /* Span styles */
+    .form-group .info {
+        color: #6c757d; /* Bootstrap secondary color */
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }

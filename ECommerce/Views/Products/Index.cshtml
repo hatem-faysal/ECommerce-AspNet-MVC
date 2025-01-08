@@ -11,11 +11,12 @@
 	{
 		<div class="col-md-3">
 			<div class="card">
-				<img src="@item.ImageURL" alt="@item.Name" style="width:90%;height:300px"/>
+				<img src="@item.ImageURL" alt="@item.Name" style="width:90%;height:300px" />
 				<h1>@item.Name</h1>
-				<p>@item.Price.ToString("c")</p>
+				<p>@String.Format("{0:C}", item.Price)</p>
 				<p>@item.Description</p>
-				<p>@item.ProductColor</p>
+				<p style="color:@item.ProductColor">@item.ProductColor</p>
+				<p>@item.Category.Name</p>
 				<button>Add To Cart</button>
 			</div>			
 		</div>			
