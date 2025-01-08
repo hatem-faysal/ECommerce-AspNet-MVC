@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ECommerce.Data;
+using ECommerce.Data.Enums;
 
 namespace ECommerce.Models
 {
@@ -8,10 +8,10 @@ namespace ECommerce.Models
     {
         [Key]
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public decimal? Price { get; set; }
-        public string? ImageURL { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public string ImageURL { get; set; }
         public ProductColor ProductColor { get; set; }
 
         //Navigational Propery

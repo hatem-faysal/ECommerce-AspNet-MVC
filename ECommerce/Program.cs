@@ -1,4 +1,5 @@
 using ECommerce.Data;
+using ECommerce.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddDbContext<EcommerceDbContext>(op =>
 op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICategoryServices, CategoryServices>();
+
 
 var app = builder.Build();
 
