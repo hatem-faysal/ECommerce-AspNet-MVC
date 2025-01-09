@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ECommerce.Data.Base;
 
 namespace ECommerce.Models
 {
-    public class Category
+    public class Category: IBaseEntity
     {
         public Category()
         {
